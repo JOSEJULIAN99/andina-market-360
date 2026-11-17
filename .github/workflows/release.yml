@@ -1,0 +1,21 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pruebas de la versión
+        run: python -m unittest discover -s tests -v
+      - name: Empaquetar
+        run: |
+          python src/resumen.py --json docs/data/resumen.json
+          git archive --format=zip --prefix=andina-market-360/ -o andina-market-360-${GITHUB_REF_NAME}.zip HEAD
+      - name: Crear Release con notas
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" andina-market-360-${GITHUB_REF_NAME}.zip docs/data/resumen.json --title "Andina Market 360 $GITHUB_REF_NAME" --notes-file gestion/notas_${GITHUB_REF_NAME}.md
