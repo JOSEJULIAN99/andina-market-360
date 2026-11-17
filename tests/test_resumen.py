@@ -32,6 +32,15 @@ class TestResumen(unittest.TestCase):
             with self.subTest(sede=sede):
                 self.assertEqual(totales[sede], Decimal(monto))
 
+    def test_calidad_de_datos(self):
+        ids = [v["id"] for v in self.ventas]
+        self.assertEqual(len(ids), len(set(ids)), "hay ids repetidos")
+        for venta in self.ventas:
+            with self.subTest(id=venta["id"]):
+                self.assertIn(venta["sede"], {"Lima", "Ica", "Arequipa"})
+                self.assertGreater(venta["cantidad"], 0)
+                self.assertGreater(venta["precio_unitario"], 0)
+
     def test_resumen_serializable(self):
         datos = resumen.construir_resumen(self.ventas)
         with tempfile.TemporaryDirectory() as tmp:
