@@ -3,6 +3,8 @@ fetch("data/resumen.json")
   .then((datos) => {
     document.getElementById("operaciones").textContent = datos.operaciones;
     document.getElementById("total").textContent = "S/ " + datos.total;
+    document.getElementById("sede-lider").textContent = datos.sede_lider;
+    document.getElementById("producto").textContent = datos.producto_mas_vendido;
     document.getElementById("fuente").textContent = datos.fuente;
     const total = Number(datos.total);
     document.getElementById("sedes").innerHTML = Object.entries(datos.sedes)
