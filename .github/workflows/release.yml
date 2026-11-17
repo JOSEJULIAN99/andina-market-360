@@ -2,20 +2,29 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Versión a publicar (ej. v1.0.0)"
+        required: true
 permissions:
   contents: write
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ inputs.version || github.ref_name }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
       - name: Pruebas de la versión
         run: python -m unittest discover -s tests -v
       - name: Empaquetar
         run: |
           python src/resumen.py --json docs/data/resumen.json
-          git archive --format=zip --prefix=andina-market-360/ -o andina-market-360-${GITHUB_REF_NAME}.zip HEAD
-      - name: Crear Release con notas
+          git archive --format=zip --prefix=andina-market-360/ -o andina-market-360-${VERSION}.zip HEAD
+      - name: Crear tag y Release con notas
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" andina-market-360-${GITHUB_REF_NAME}.zip docs/data/resumen.json --title "Andina Market 360 $GITHUB_REF_NAME" --notes-file gestion/notas_${GITHUB_REF_NAME}.md
+        run: |
+          gh release create "$VERSION" andina-market-360-${VERSION}.zip docs/data/resumen.json \
+            --target "$GITHUB_SHA" --title "Andina Market 360 $VERSION" --notes-file gestion/notas_${VERSION}.md
