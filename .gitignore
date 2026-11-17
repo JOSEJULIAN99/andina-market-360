@@ -1,0 +1,12 @@
+# Entornos y caché de Python
+__pycache__/
+*.pyc
+.venv/
+# Secretos: nunca se versionan
+.env
+*.pem
+*.key
+# Temporales y artefactos de empaquetado
+dist/
+*.tmp
+*.bundle

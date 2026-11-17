@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andina Market 360 · Resumen de ventas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Andina Market 360</h1>
+    <p>Resumen de ventas ficticias por sede · Lima, Ica y Arequipa</p>
+  </header>
+  <main>
+    <section class="kpis">
+      <article><h2>Operaciones</h2><p id="operaciones">–</p></article>
+      <article><h2>Total vendido</h2><p id="total">–</p></article>
+    </section>
+    <section>
+      <h2>Ventas por sede</h2>
+      <table>
+        <thead><tr><th>Sede</th><th>Total (S/)</th><th>Participación</th></tr></thead>
+        <tbody id="sedes"><tr><td colspan="3">Cargando datos…</td></tr></tbody>
+      </table>
+    </section>
+    <p class="fuente">Fuente: <span id="fuente">data/resumen.json</span>. Las cifras se generan con <code>python src/resumen.py --json docs/data/resumen.json</code>; no se escriben a mano.</p>
+  </main>
+  <footer>Proyecto académico · UTP · Herramientas de Desarrollo · Datos 100 % ficticios</footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+id,fecha,sede,producto,cantidad,precio_unitario
+V001,2026-10-03,Lima,Cesta navideña,3,80.00
+V002,2026-10-05,Ica,Aceite de oliva 1L,3,45.00
+V003,2026-10-09,Arequipa,Cesta navideña,2,80.00
+V004,2026-10-14,Lima,Café orgánico 250g,8,28.00
+V005,2026-10-21,Ica,Cesta navideña,2,80.00
+V006,2026-11-02,Arequipa,Quinua 1kg,4,35.00
+V007,2026-11-08,Lima,Quinua 1kg,6,35.00
+V008,2026-11-15,Ica,Quinua 1kg,4,35.00
+V009,2026-11-22,Arequipa,Café orgánico 250g,2,28.00
+V010,2026-12-01,Lima,Chocolate artesanal,7,20.00
+V011,2026-12-06,Ica,Chocolate artesanal,6,20.00
+V012,2026-12-12,Arequipa,Chocolate artesanal,6,20.00
