@@ -1,4 +1,4 @@
-# Andina Market 360 · Ventas por sede
+# Andina Market 360 · Ventas por sede y dashboard académico
 
 Caso ficticio único del **Cuaderno de prácticas Git y GitHub (36 capítulos)**.
 
