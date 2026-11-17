@@ -35,11 +35,30 @@ def total_general(ventas):
     return sum((v["importe"] for v in ventas), Decimal("0"))
 
 
+def producto_mas_vendido(ventas):
+    """Producto con más unidades vendidas."""
+    unidades = {}
+    for venta in ventas:
+        unidades[venta["producto"]] = unidades.get(venta["producto"], 0) + venta["cantidad"]
+    return max(unidades, key=unidades.get)
+
+
+def totales_mensuales(ventas):
+    meses = {}
+    for venta in ventas:
+        mes = venta["fecha"][:7]
+        meses[mes] = meses.get(mes, Decimal("0")) + venta["importe"]
+    return dict(sorted(meses.items()))
+
+
 def construir_resumen(ventas):
     return {
         "operaciones": len(ventas),
         "total": f"{total_general(ventas):.2f}",
         "sedes": {s: f"{t:.2f}" for s, t in totales_por_sede(ventas).items()},
+        "sede_lider": max(totales_por_sede(ventas), key=totales_por_sede(ventas).get),
+        "producto_mas_vendido": producto_mas_vendido(ventas),
+        "meses": {m: f"{t:.2f}" for m, t in totales_mensuales(ventas).items()},
         "fuente": "data/ventas.csv (datos ficticios)",
     }
 
@@ -53,6 +72,7 @@ def main():
     for sede, total in resumen["sedes"].items():
         print(f"{sede}: S/ {total}")
     print(f"TOTAL: S/ {resumen['total']}")
+    print(f"Sede líder: {resumen['sede_lider']} · Producto más vendido: {resumen['producto_mas_vendido']}")
     if args.json:
         destino = Path(args.json)
         destino.parent.mkdir(parents=True, exist_ok=True)
