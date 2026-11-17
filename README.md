@@ -42,12 +42,12 @@ Abrir `http://localhost:8000` mientras se ejecuta el servidor. Detener con Ctrl+
 Issue → rama `feature/*` o `fix/*` → commit → Pull Request → revisión de Calidad → CI en verde → merge → Pages → tag y Release. Ver [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Equipo
-| Integrante | Rol |
-|---|---|
-| Altamirano | Calidad y CI |
-| Sofía | Desarrollo del script |
-| Junior | Datos, documentación y web |
-| José | Integración, publicación y seguridad |
+| Integrante | GitHub | Rol |
+|---|---|---|
+| Altamirano | [@xxsebas15xx](https://github.com/xxsebas15xx) | Calidad y CI |
+| Sofía | [@sofia067](https://github.com/sofia067) | Desarrollo del script |
+| Junior | [@JuniorAlonso](https://github.com/JuniorAlonso) | Datos, documentación y web |
+| José | [@JOSEJULIAN99](https://github.com/JOSEJULIAN99) | Integración, publicación y seguridad |
 
 ## Uso responsable
 Proyecto exclusivamente didáctico. No almacenamos contraseñas, tokens, correos personales ni ventas reales. Ver [SECURITY.md](SECURITY.md) y [uso responsable de IA](gestion/ia_responsable.md).

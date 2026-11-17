@@ -1,7 +1,7 @@
-# Responsables por área (cap. 17 y 27). En el grupo: Datos=Junior, Desarrollo=Sofía,
-# Calidad=Altamirano, Integración=José. Solo José tiene cuenta enlazada al repositorio,
-# por eso todas las rutas apuntan a @JOSEJULIAN99.
-/data/      @JOSEJULIAN99
-/src/       @JOSEJULIAN99
-/tests/     @JOSEJULIAN99
-/.github/   @JOSEJULIAN99
+# Responsables por área (caps. 17 y 27)
+/data/      @JuniorAlonso @JOSEJULIAN99
+/docs/      @JuniorAlonso @JOSEJULIAN99
+/src/       @sofia067 @JOSEJULIAN99
+/tests/     @xxsebas15xx @JOSEJULIAN99
+/.github/   @xxsebas15xx @JOSEJULIAN99
+/gestion/   @JOSEJULIAN99
