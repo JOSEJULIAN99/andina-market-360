@@ -8,7 +8,7 @@ fetch("data/resumen.json")
     document.getElementById("sedes").innerHTML = Object.entries(datos.sedes)
       .map(([sede, monto]) => {
         const pct = ((Number(monto) / total) * 100).toFixed(1);
-        return `<tr><td>${sede}</td><td>${monto}</td><td><div class="barra" style="width:${pct}%"></div>${pct} %</td></tr>`;
+        return `<tr><td>${sede}</td><td>${monto}</td><td><div class="participacion"><div class="barra" style="width:${pct}%"></div><span>${pct} %</span></div></td></tr>`;
       }).join("");
   })
   .catch(() => {
