@@ -24,4 +24,3 @@ El proyecto es exclusivamente didáctico. No almacenar contraseñas, tokens, cor
 
 ## Equipo
 Grupo de Herramientas de Desarrollo (UTP): Altamirano, Sofía, Junior y José.
-Total ajustado manualmente: S/ 2000.00
