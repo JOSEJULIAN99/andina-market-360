@@ -13,5 +13,10 @@
     "2026-11": "546.00",
     "2026-12": "380.00"
   },
+  "ticket_promedio": {
+    "Lima": "203.50",
+    "Ica": "138.75",
+    "Arequipa": "119.00"
+  },
   "fuente": "data/ventas.csv (datos ficticios)"
 }
