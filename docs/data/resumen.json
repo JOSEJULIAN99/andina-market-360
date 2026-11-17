@@ -1,0 +1,17 @@
+{
+  "operaciones": 12,
+  "total": "1845.00",
+  "sedes": {
+    "Lima": "814.00",
+    "Ica": "555.00",
+    "Arequipa": "476.00"
+  },
+  "sede_lider": "Lima",
+  "producto_mas_vendido": "Chocolate artesanal",
+  "meses": {
+    "2026-10": "919.00",
+    "2026-11": "546.00",
+    "2026-12": "380.00"
+  },
+  "fuente": "data/ventas.csv (datos ficticios)"
+}
