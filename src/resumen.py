@@ -30,7 +30,6 @@ def totales_por_sede(ventas):
         totales[venta["sede"]] = totales.get(venta["sede"], Decimal("0")) + venta["importe"]
     return totales
 
-
 def total_general(ventas):
     return sum((v["importe"] for v in ventas), Decimal("0"))
 
@@ -50,6 +49,13 @@ def totales_mensuales(ventas):
         meses[mes] = meses.get(mes, Decimal("0")) + venta["importe"]
     return dict(sorted(meses.items()))
 
+def ticket_promedio(ventas):
+    """Venta promedio por operación en cada sede (Reto 1.1)."""
+    operaciones = {}
+    for venta in ventas:
+        operaciones[venta["sede"]] = operaciones.get(venta["sede"], 0) + 1
+    return {s: t / operaciones[s] for s, t in totales_por_sede(ventas).items()}
+
 
 def construir_resumen(ventas):
     return {
@@ -59,6 +65,7 @@ def construir_resumen(ventas):
         "sede_lider": max(totales_por_sede(ventas), key=totales_por_sede(ventas).get),
         "producto_mas_vendido": producto_mas_vendido(ventas),
         "meses": {m: f"{t:.2f}" for m, t in totales_mensuales(ventas).items()},
+        "ticket_promedio": {s: f"{t:.2f}" for s, t in ticket_promedio(ventas).items()},
         "fuente": "data/ventas.csv (datos ficticios)",
     }
 
