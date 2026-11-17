@@ -3,10 +3,10 @@
 ## Organización simulada "Andina Market 360"
 | Equipo | Integrante | Permiso en GitHub | Puede |
 |---|---|---|---|
-| Datos | Junior | Triage / Write en ramas | leer, proponer cambios, abrir Issues |
-| Desarrollo | Sofía | Write | crear ramas y PR |
-| Calidad | Altamirano | Maintain | revisar y aprobar PR, gestionar CI |
-| Administración | José | Admin | gestionar permisos, Pages, releases y reglas |
+| Datos | Junior (@JuniorAlonso) | Triage / Write en ramas | leer, proponer cambios, abrir Issues |
+| Desarrollo | Sofía (@sofia067) | Write | crear ramas y PR |
+| Calidad | Altamirano (@xxsebas15xx) | Maintain | revisar y aprobar PR, gestionar CI |
+| Administración | José (@JOSEJULIAN99) | Admin | gestionar permisos, Pages, releases y reglas |
 
 ## Regla para la rama `main`
 - Requiere Pull Request y 1 aprobación.
