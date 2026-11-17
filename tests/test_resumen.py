@@ -25,6 +25,13 @@ class TestResumen(unittest.TestCase):
         self.assertEqual(totales["Ica"], Decimal("555.00"))
         self.assertEqual(totales["Arequipa"], Decimal("476.00"))
 
+    def test_ficha_por_sede(self):
+        esperado = {"Lima": "814.00", "Ica": "555.00", "Arequipa": "476.00"}
+        totales = resumen.totales_por_sede(self.ventas)
+        for sede, monto in esperado.items():
+            with self.subTest(sede=sede):
+                self.assertEqual(totales[sede], Decimal(monto))
+
     def test_resumen_serializable(self):
         datos = resumen.construir_resumen(self.ventas)
         with tempfile.TemporaryDirectory() as tmp:
