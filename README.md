@@ -21,3 +21,6 @@ Abrir `http://localhost:8000` mientras se ejecuta el servidor. Detener con Ctrl+
 
 ## Uso responsable
 El proyecto es exclusivamente didáctico. No almacenar contraseñas, tokens, correos personales ni ventas reales.
+
+## Equipo
+Grupo de Herramientas de Desarrollo (UTP): Altamirano, Sofía, Junior y José.
